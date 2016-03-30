@@ -1,4 +1,7 @@
 <% @users.each do |f| %>
   <%= f.name %>
-  <%= link_to "Delete", f, method: :delete %>
+  <% f.devices.each do |d| %>
+  <%= d.serial_number %>
+  <% end %>
+  <%= link_to "Delete", f, method: :delete %><br>
 <% end %>

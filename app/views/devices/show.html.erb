@@ -1,2 +1,6 @@
-<%= @device.serial_number %><br>
-<%= @device.user.name %>
+<%= @device.serial_number %>
+<% if @device.user %>
+  <%= @device.user.name %>
+<% else %>
+  No Assigned User
+<% end %>

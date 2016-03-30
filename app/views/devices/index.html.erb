@@ -1,5 +1,9 @@
 <% @devices.each do |f| %>
   <%= f.serial_number %>
+  <% if f.user %>
   <%= f.user.name %>
-  <%= link_to "Delete", f, method: :delete %>
+  <% else %>
+  No assigned user
+  <% end %>
+  <%= link_to "Delete", f, method: :delete %><br>
 <% end %>
