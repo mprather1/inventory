@@ -1,0 +1,5 @@
+<% @devices.each do |f| %>
+  <%= f.serial_number %>
+  <%= f.user.name %>
+  <%= link_to "Delete", f, method: :delete %>
+<% end %>

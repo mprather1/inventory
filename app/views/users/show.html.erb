@@ -1,0 +1,4 @@
+<%= @user.name %><br>
+<% @user.devices.each do |f| %>
+  <%= f.serial_number %>
+<% end %>
