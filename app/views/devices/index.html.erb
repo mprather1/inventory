@@ -1,9 +1,26 @@
-<% @devices.each do |f| %>
-  <%= f.serial_number %>
-  <% if f.user %>
-  <%= f.user.name %>
-  <% else %>
-  No assigned user
-  <% end %>
-  <%= link_to "Delete", f, method: :delete %><br>
-<% end %>
+
+
+
+<table class="table">
+  <tr>
+    <th>Serial Number</th>
+    <th>Assigned User</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% @devices.each do |f| %>
+  <tr>
+
+    <td>
+      <%= f.serial_number %>
+    </td>
+    <td>
+      <% if f.user %>
+        <%= f.user.name %>
+      <% else %>
+        No assigned user
+      <% end %>
+      <td><%= link_to "Delete", f, method: :delete %></td>
+    <% end %>
+    </td>
+  </tr>
+</table>

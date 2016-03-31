@@ -8,3 +8,4 @@
 
 User.create(first_name: "Kill", last_name: "Bill")
 Device.create(serial_number: 'F5RKT1PADFHW', user_id: 1)
+Device.create(serial_number: 'F5RKT1FUKFHW', user_id: 1)
