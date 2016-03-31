@@ -2,17 +2,14 @@
   <tr>
   
     <th>Name </th>
-    <th>Devices </th>
+    <th>Devices Assigned</th>
     <th>&nbsp;</th>
   </tr>
   
   <tr>
     <% @users.each do |f| %>
     <td><%= link_to f.name, user_path(f) %> </td>
-    <% f.devices.each do |d| %>
-    <td><%= d.serial_number %> </td>
+    <td><%= link_to f.devices.size, devices_path(f) %></td>
     <% end %>
-    <td><%= link_to "Delete", f, method: :delete %> </td>
-  <% end %>
   </tr>
 </table>
