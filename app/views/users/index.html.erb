@@ -1,27 +1,18 @@
-<table>
+<table class="table">
   <tr>
   
-    <th>Name</th>
-    <th>Devices</th>
+    <th>Name </th>
+    <th>Devices </th>
     <th>&nbsp;</th>
   </tr>
   
   <tr>
     <% @users.each do |f| %>
-    <td><%= f.name %></td>
+    <td><%= link_to f.name, user_path(f) %> </td>
     <% f.devices.each do |d| %>
-    <td><%= d.serial_number %></td>
+    <td><%= d.serial_number %> </td>
     <% end %>
-    <td><%= link_to "Delete", f, method: :delete %></td>
+    <td><%= link_to "Delete", f, method: :delete %> </td>
   <% end %>
   </tr>
-  
-
-
-
-
-
-
-
-
 </table>

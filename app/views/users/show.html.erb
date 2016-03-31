@@ -1,4 +1,15 @@
-<%= @user.name %><br>
-<% @user.devices.each do |f| %>
-  <%= f.serial_number %>
-<% end %>
+<table class="table-condensed">
+  <tr>
+    <th>Name:</th>
+    <td><%= @user.name %></td>
+  </tr>
+  <tr>
+    <% @user.devices.each do |f| %>
+      <th>Assigned devices:</th>
+      <td><%= f.serial_number %></td>
+    <% end %>
+
+  </tr>
+  
+  
+
