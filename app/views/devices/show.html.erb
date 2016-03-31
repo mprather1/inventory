@@ -1,15 +1,1 @@
-<table class="table-condensed">
-  <tr>
-    <th>Serial Number: </th>
-    <td><%= @device.serial_number %></td>
-  </tr>
-
-  <tr>
-    <th>Assigned User: </th>
-    <% if @device.user %>
-      <td><%= link_to @device.user.name, user_path(@device.user) %></td>
-    <% else %>
-      <td>No Assigned User</td>
-    <% end %>
-  </tr>
-</table>
+<%= render partial: 'device', locals: { device: @device } %>

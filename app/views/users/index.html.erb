@@ -1,15 +1,21 @@
+<h2>Users</h2>
+
 <table class="table">
   <tr>
-  
     <th>Name </th>
     <th>Devices Assigned</th>
     <th>&nbsp;</th>
+
   </tr>
-  
+
+  <% @users.each do |f| %>
   <tr>
-    <% @users.each do |f| %>
     <td><%= link_to f.name, user_path(f) %> </td>
     <td><%= link_to f.devices.size, devices_path(f) %></td>
+    <td>
+      <%= link_to "Edit", edit_user_path(f) %>
+      <%= link_to "Delete", f, method: :delete %>
+    </td>
     <% end %>
   </tr>
 </table>

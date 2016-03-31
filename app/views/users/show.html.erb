@@ -1,18 +1,3 @@
-<div class="container">
-
-</div>
-<table class="table-bordered">
-  <tr>
-
-    <th><%= @user.name %></th>
-  </tr>
-    <th>Assigned devices:</th>
-    <% @user.devices.each do |f| %>
-    <tr>
-      <td><%= link_to f.serial_number, device_path(f) %></td>
-    <% end %>
-      </tr>
 
 
-</table>
-</div>
+<%= render partial: 'user', locals: { user: @user } %>

@@ -1,5 +1,5 @@
 
-
+<h2>Devices</h2>
 
 <table class="table">
   <tr>
@@ -15,13 +15,14 @@
     </td>
     <td>
       <% if f.user %>
-        <%= f.user.name %>
+        <%= link_to f.user.name, user_path(f.user) %>
       <% else %>
         No assigned user
       <% end %>
       <td>
+        <%= link_to "Edit", edit_device_path(f) %>
         <%= link_to "Delete", f, method: :delete %>
-        <%= link_to "Edit", edit_device_path(f) %></td>
+      </td>
     <% end %>
     </td>
   </tr>
