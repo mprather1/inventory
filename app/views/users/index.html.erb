@@ -5,3 +5,31 @@
   <% end %>
   <%= link_to "Delete", f, method: :delete %><br>
 <% end %>
+
+<table>
+  <tr>
+  
+    <th>Name</th>
+    <th>Devices</th>
+    <th>&nbsp;</th>
+  </tr>
+  
+  <tr>
+    <% @users.each do |f| %>
+    <td><%= f.name %></td>
+    <% f.devices.each do |d| %>
+    <td><%= d.serial_number %></td>
+    <% end %>
+    <%= link_to "Delete", f, method: :delete %><br>
+  <% end
+  </tr>
+  
+
+
+
+
+
+
+
+
+</table>
