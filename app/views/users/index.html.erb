@@ -1,11 +1,3 @@
-<% @users.each do |f| %>
-  <%= f.name %>
-  <% f.devices.each do |d| %>
-  <%= d.serial_number %>
-  <% end %>
-  <%= link_to "Delete", f, method: :delete %><br>
-<% end %>
-
 <table>
   <tr>
   
@@ -20,8 +12,8 @@
     <% f.devices.each do |d| %>
     <td><%= d.serial_number %></td>
     <% end %>
-    <%= link_to "Delete", f, method: :delete %><br>
-  <% end
+    <td><%= link_to "Delete", f, method: :delete %></td>
+  <% end %>
   </tr>
   
 
