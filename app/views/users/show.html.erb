@@ -1,15 +1,18 @@
-<table class="table-condensed">
+<div class="container">
+
+</div>
+<table class="table-bordered">
   <tr>
-    <th>Name:</th>
-    <td><%= @user.name %></td>
+
+    <th><%= @user.name %></th>
   </tr>
-  <tr>
+    <th>Assigned devices:</th>
     <% @user.devices.each do |f| %>
-      <th>Assigned devices:</th>
-      <td><%= f.serial_number %></td>
+    <tr>
+      <td><%= link_to f.serial_number, device_path(f) %></td>
     <% end %>
+      </tr>
 
-  </tr>
-  
-  
 
+</table>
+</div>

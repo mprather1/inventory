@@ -11,7 +11,7 @@
   <tr>
 
     <td>
-      <%= f.serial_number %>
+      <%= link_to f.serial_number, device_path(f) %>
     </td>
     <td>
       <% if f.user %>
@@ -19,7 +19,9 @@
       <% else %>
         No assigned user
       <% end %>
-      <td><%= link_to "Delete", f, method: :delete %></td>
+      <td>
+        <%= link_to "Delete", f, method: :delete %>
+        <%= link_to "Edit", edit_device_path(f) %></td>
     <% end %>
     </td>
   </tr>
