@@ -24,7 +24,7 @@
 
   <% @devices.each do |f| %>
   <tr>
-    <td><%= link_to f.serial_number, device_path(f) %></td>
+    <td><%= link_to f.serial_number.upcase, device_path(f) %></td>
     <td>
       <% if f.user %>
         <%= link_to f.user.name, user_path(f.user) %>

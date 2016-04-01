@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   before_action :confirm_logged_in
+  before_action :user_admin, except: [:show, :index]
+  #before_action :correct_user, only: [:edit, :update, :show]
+
 
   def index
     if params[:search]

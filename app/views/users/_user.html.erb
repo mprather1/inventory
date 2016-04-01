@@ -6,7 +6,7 @@
   </tr>
   <% user.devices.each do |f| %>
     <tr>
-      <td><%= link_to f.serial_number, device_path(f) %></td>
+      <td><%= link_to f.serial_number.upcase, device_path(f) %></td>
     </tr>
   <% end %>
 </table>

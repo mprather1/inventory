@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
 
   before_action :find_user
   before_action :confirm_logged_in
-
+  before_action :user_admin, except: [:index, :show]
   def index
 
   end
@@ -52,7 +52,7 @@ class DevicesController < ApplicationController
   private
 
   def device_params
-    params.require(:device).permit(:serial_number)
+    params.require(:device).permit(:serial_number, :user_id)
   end
 
   def find_user
