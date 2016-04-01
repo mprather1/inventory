@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20160328230748) do
 
   create_table "devices", force: :cascade do |t|
+    t.string   "device_type"
     t.string   "serial_number"
     t.integer  "user_id"
     t.datetime "created_at",    null: false

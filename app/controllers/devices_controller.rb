@@ -52,7 +52,7 @@ class DevicesController < ApplicationController
   private
 
   def device_params
-    params.require(:device).permit(:serial_number, :user_id)
+    params.require(:device).permit(:serial_number, :user_id, :device_type)
   end
 
   def find_user
