@@ -1,17 +1,22 @@
 
 <h2>Devices</h2>
-
-<%= form_tag(devices_path, method: 'get', id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search for serial_number..." %>
-  <%= submit_tag "Search", class: 'btn btn-inverse', name: nil %>
-<% end %>
+<div class="row.fluid">
+   <div class="col-sm-4">
+    <%= form_tag(devices_path, method: 'get', id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for serial_number..." %>
+      <%= submit_tag "Search", class: 'btn btn-inverse', name: nil %>
+    <% end %>
+  </div>
+  <div class="col-sm-8" id="logout-button"><%= button_to "New Device", new_device_path, method: 'get', class: 'btn btn-inverse' %></div>
+</div>
 <hr>
+<br>
 
 <table class="table">
   <tr>
     <th>Serial Number</th>
     <th>Assigned User</th>
-    <th>&nbsp;</th>
+    <th>Actions</th>
   </tr>
   <% @devices.each do |f| %>
   <tr>
