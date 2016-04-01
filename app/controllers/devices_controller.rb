@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
 
   before_action :find_user
   before_action :confirm_logged_in
-  
+
   def index
 
   end
@@ -56,7 +56,9 @@ class DevicesController < ApplicationController
   end
 
   def find_user
-    if params[:user_id]
+    if params[:search]
+      @devices = Device.search(params[:search])
+    elsif params[:user_id]
       @devices = Device.where(user_id: params[:user_id])
     else
       @devices = Device.all
