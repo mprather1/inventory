@@ -1,6 +1,8 @@
 class DevicesController < ApplicationController
 
   before_action :find_user
+  before_action :confirm_logged_in
+  
   def index
 
   end
