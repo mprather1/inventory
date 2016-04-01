@@ -6,5 +6,6 @@ class CreateDevices < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index "devices", "user_id"
   end
 end
