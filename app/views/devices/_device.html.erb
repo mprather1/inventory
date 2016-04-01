@@ -1,3 +1,9 @@
+<% if device.user %>
+  <h2><%= "#{device.user.name}\'s Device" %></h2>
+<% else %>
+  <h2>Device</h2>
+<% end %>
+
 <table class="table-condensed">
   <tr>
     <th>Serial Number: </th>
