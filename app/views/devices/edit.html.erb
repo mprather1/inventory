@@ -1,4 +1,4 @@
 <%= form_for @device do |f| %>
   <%= render partial: 'form', locals: {f: f} %>
-  <%= f.submit("Update Device") %>
+  <%= f.submit("Update Device", class: 'btn btn-inverse') %>
 <% end %>
