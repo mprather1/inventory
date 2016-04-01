@@ -11,7 +11,7 @@
   <% @users.each do |f| %>
   <tr>
     <td><%= link_to f.name, user_path(f) %> </td>
-    <td><%= link_to f.devices.size, devices_path(f) %></td>
+    <td><%= link_to f.devices.size, user_devices_path(f) %></td>
     <td>
       <%= link_to "Edit", edit_user_path(f) %>
       <%= link_to "Delete", f, method: :delete %>

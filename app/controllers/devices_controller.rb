@@ -1,6 +1,8 @@
 class DevicesController < ApplicationController
+
+  before_action :find_user
   def index
-    @devices = Device.all
+
   end
 
   def show
@@ -51,4 +53,11 @@ class DevicesController < ApplicationController
     params.require(:device).permit(:serial_number)
   end
 
+  def find_user
+    if params[:user_id]
+      @devices = Device.where(user_id: params[:user_id])
+    else
+      @devices = Device.all
+    end
+  end
 end

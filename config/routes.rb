@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'users#index'
 
-  resources :users
-  resources :devices 
+  resources :users do
+    resources :devices
+  end
+
+  resources :devices
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
