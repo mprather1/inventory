@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :confirm_logged_in
 
   def index
-    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).sorted
+    else
+      @users = User.all.sorted
+    end
   end
 
   def show

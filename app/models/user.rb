@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  scope :sorted, lambda { order("last_name ASC, first_name ASC")}
+
   has_secure_password validations: false
 
   has_many :devices
@@ -15,4 +17,9 @@ class User < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
+
+  def self.search(query)
+    where("username like ?", "%#{query}%")
+  end
+
 end
