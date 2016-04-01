@@ -6,7 +6,11 @@
       <%= submit_tag "Search", class: 'btn btn-inverse', :name => nil %>
     <% end %>
   </div>
-  <div class="col-sm-8" id="new-button"><%= button_to "New User", new_user_path, method: 'get', class: 'btn btn-inverse'%></div>
+  <div class="col-sm-8" id="new-button">
+    <% if user_admin? %>
+      <%= button_to "New User", new_user_path, method: 'get', class: 'btn btn-inverse'%>
+    <% end %>
+  </div>
 <hr>
 <br>
 
@@ -14,7 +18,7 @@
   <tr>
     <th>Name </th>
     <th>Devices Assigned</th>
-    <th>&nbsp;</th>
+    <th>Actions</th>
 
   </tr>
 

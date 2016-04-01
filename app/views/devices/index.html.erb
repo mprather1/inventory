@@ -1,40 +1,41 @@
 <h2>Devices</h2>
 <div class="row.fluid">
-   <div class="col-sm-4">
+  <div class="col-sm-4">
     <%= form_tag(devices_path, method: 'get', id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search for serial_number..." %>
       <%= submit_tag "Search", class: 'btn btn-inverse', name: nil %>
     <% end %>
   </div>
-  <div class="col-sm-8" id="new-button"><%= button_to "New Device", new_device_path, method: 'get', class: 'btn btn-inverse' %></div>
-</div>
+  <div class="col-sm-8" id="new-button">
+    <% if user_admin? %>
+      <%= button_to "New Device", new_device_path, method: 'get', class: 'btn btn-inverse' %>
+    <% end %>
+  </div>
 <hr>
 <br>
 
-
 <table class="table">
   <tr>
-    <th>Serial Number</th>
+    <th>Serial Number </th>
     <th>Assigned User</th>
     <th>Actions</th>
+
   </tr>
+
   <% @devices.each do |f| %>
   <tr>
-
-    <td>
-      <%= link_to f.serial_number, device_path(f) %>
-    </td>
+    <td><%= link_to f.serial_number, device_path(f) %></td>
     <td>
       <% if f.user %>
         <%= link_to f.user.name, user_path(f.user) %>
       <% else %>
         No assigned user
       <% end %>
-      <td>
-        <%= link_to "Edit", edit_device_path(f) %>
-        <%= link_to "Delete", f, method: :delete %>
-      </td>
-    <% end %>
     </td>
+    <td>
+      <%= link_to "Edit", edit_device_path(f) %>
+      <%= link_to "Delete", f, method: :delete %>
+    </td>
+    <% end %>
   </tr>
 </table>
