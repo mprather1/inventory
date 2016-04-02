@@ -4,10 +4,10 @@ class DevicesController < ApplicationController
   before_action :confirm_logged_in
   before_action :user_admin, except: [:index, :show]
   def index
-    #respond_to do |format|
-    #  format.html
-    #  format.json { render json: @devices.to_json }
-  #  end
+    respond_to do |format|
+      format.html
+      format.json { @devices = Device.search(params[:search]) }
+    end
   end
 
   def show
