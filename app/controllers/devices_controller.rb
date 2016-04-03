@@ -1,8 +1,11 @@
 class DevicesController < ApplicationController
 
+  autocomplete :device, :serial_number
+
   before_action :find_user
   before_action :confirm_logged_in
   before_action :user_admin, except: [:index, :show]
+
   def index
     respond_to do |format|
       format.html

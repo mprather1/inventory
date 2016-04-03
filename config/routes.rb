@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     resources :devices
   end
 
-  resources :devices
+  resources :devices do
+    get :autocomplete_device_serial_number, :on => :collection
+  end
 
   get 'access/login' => 'access#login'
   get 'access/attempt_login' => 'access#attempt_login'

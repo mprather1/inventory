@@ -2,10 +2,14 @@
 <div class="row.fluid">
   <div class="col-sm-4">
     <%= form_tag(devices_path, method: 'get', id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search for serial_number...", autofocus: true %>
-      
+      <%#= text_field_tag :search, params[:search], placeholder: "Search for serial_number...", autofocus: true %>
+      <%= autocomplete_field_tag :search, '', autocomplete_device_serial_number_devices_path %>
       <%= submit_tag "Search", class: 'btn btn-inverse', name: nil %>
     <% end %>
+    <%#= form_for(@devices, method: 'get', id: 'search-form') do %>
+      <%#= f.autocomplete_field :device_serial_number, autocomplete_device_serial_number_devices_path %>
+      <%#= f.submit("Search", class: 'btn btn-inverse', name: nil) %>
+      <%# end %>
   </div>
   <div class="col-sm-8" id="new-button">
     <% if user_admin? %>
