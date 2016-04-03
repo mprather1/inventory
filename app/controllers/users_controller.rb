@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  autocomplete :user, :username, :extra_data => [:first_name, :last_name]
+
   before_action :confirm_logged_in
   before_action :user_admin, except: [:show, :index]
   #before_action :correct_user, only: [:edit, :update, :show]

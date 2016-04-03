@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users do
     resources :devices
+    get :autocomplete_user_username, :on => :collection
   end
 
   resources :devices do
