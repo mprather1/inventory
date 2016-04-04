@@ -14,7 +14,9 @@
   </div>
 <hr>
 <br>
-
+<div class="digg_pagination">
+  <%= will_paginate @users%>
+</div>
 <table class="table">
   <tr>
     <th>Name </th>
@@ -33,4 +35,8 @@
     </td>
     <% end %>
   </tr>
+
 </table>
+<div class="digg_pagination">
+  <%= will_paginate @users %>
+</div>

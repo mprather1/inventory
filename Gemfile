@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 #gem 'rail4-autocomplete'
+gem 'will_paginate', '~> 3.0.6'
 gem 'faker'
 gem 'possessive'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
