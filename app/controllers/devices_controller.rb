@@ -63,11 +63,11 @@ class DevicesController < ApplicationController
 
   def find_user
     if params[:search]
-      @devices = Device.search(params[:search])
+      @devices = Device.search(params[:search]).paginate(page: params[:page], :per_page => 15)
     elsif params[:user_id]
-      @devices = Device.where(user_id: params[:user_id])
+      @devices = Device.where(user_id: params[:user_id]).paginate(page: params[:page], :per_page => 15)
     else
-      @devices = Device.all
+      @devices = Device.all.paginate(page: params[:page], :per_page => 15)
     end
   end
 end
