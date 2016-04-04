@@ -3,7 +3,7 @@
     <div class="navbar-header">
 
         <% if logged_in? %>
-          <li class="navbar-brand active"><%= "#{current_user.first_name} #{current_user.last_name}" %></li>
+          <li class="navbar-brand active"><%= link_to_unless_current "#{current_user.first_name} #{current_user.last_name}", user_path(current_user), id: "brandname" %></li>
         <% else %>
           <li class="navbar-brand active">Inventory</li>
         <% end %>

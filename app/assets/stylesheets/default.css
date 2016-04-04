@@ -1,3 +1,9 @@
 h2 {
-  padding-top: 32px
+  padding-top: 1em
 }
+
+#brandname {
+  color: white;
+  text-decoration: none
+}
+.login { padding-top: 4em}
