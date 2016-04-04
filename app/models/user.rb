@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
 
   has_many :devices
 
-  validates_presence_of :password, :on => :create
-  validates_presence_of :password_confirmation
-  validates_confirmation_of :password
+#  validates_presence_of :password, :on => :create
+#  validates_presence_of :password_confirmation
+#  validates_confirmation_of :password
 
   validates :first_name, :presence => true, :length => { :maximum => 25 }
   validates :last_name, :presence => true, :length => { :maximum => 50 }
