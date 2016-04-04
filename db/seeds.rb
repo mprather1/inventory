@@ -25,5 +25,5 @@ end
 end
 
 150.times do |x|
-  Device.create(device_type: "Notebook", serial_number: Faker::Number.number(3), user_id: Faker::Number.between(1, 100))
+  Device.create(device_type: "Notebook", serial_number: Faker::Number.number(12), user_id: Faker::Number.between(1, 100))
 end

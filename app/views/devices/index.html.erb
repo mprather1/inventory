@@ -1,30 +1,37 @@
+
 <h2>Devices</h2>
+<% if user_admin? %>
+  <%= button_to "New Device", new_device_path, method: 'get', class: 'btn btn-inverse', id: 'new-button' %>
+<% end %>
+
 <div class="row.fluid">
   <div class="col-sm-4">
     <%= form_tag(devices_path, method: 'get', id: "search-form") do %>
-
-      <%= autocomplete_field_tag :search, '', autocomplete_device_serial_number_devices_path, placeholder: "Search for serial number...", autofocus: true %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for username...", autofocus: true %>
+      <%#= autocomplete_field_tag :search, '', autocomplete_device_serial_number_devices_path, placeholder: "Search for serial number...", autofocus: true %>
       <%= submit_tag "Search", class: 'btn btn-inverse', name: nil %>
     <% end %>
+
   </div>
-  <div class="col-sm-8" id="new-button">
-    <% if user_admin? %>
-      <%= button_to "New Device", new_device_path, method: 'get', class: 'btn btn-inverse' %>
-    <% end %>
+
+  <div class="col-sm-8" id="pages">
+        <div class="digg_pagination">
+      <%= will_paginate @users%>
+    </div>
   </div>
 <hr>
 <br>
 
-<div class="digg_pagination">
-  <%= will_paginate @users%>
-</div>
+
 
 <table class="table">
   <tr>
     <th>Serial Number </th>
     <th>Assigned User</th>
-    <th>Actions</th>
-
+    <th>Device Type</th>
+    <% if user_admin? %>
+      <th>Actions</th>
+    <% end %>
   </tr>
 
   <% @devices.each do |f| %>
@@ -37,11 +44,14 @@
         No assigned user
       <% end %>
     </td>
-    <td>
-      <%= link_to "Edit", edit_device_path(f) %>
-      <%= link_to "Delete", f, method: :delete %>
-    </td>
+    <td><%= f.device_type %></td>
+    <% if user_admin? %>
+      <td>
+        <%= link_to "Edit", edit_device_path(f) %>
+        <%= link_to "Delete", f, method: :delete %>
+      </td>
     <% end %>
+  <% end %>
   </tr>
 </table>
 
