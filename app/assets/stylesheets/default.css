@@ -1,9 +1,11 @@
 h2 {
-  padding-top: 1em
+  padding-top: 1.5em
 }
 
 #brandname {
   color: white;
   text-decoration: none
 }
-.login { padding-top: 4em}
+.login { padding-top: 4.5em}
+
+#pages {text-align: right}
