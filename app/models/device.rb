@@ -8,7 +8,7 @@ class Device < ActiveRecord::Base
 
   def self.search(query)
     where("serial_number ILIKE :query OR device_type ILIKE :query", query: "%#{query}%")
-  end
+end
 
 
 end
